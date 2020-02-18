@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="styleinfo.css"/>
+    <title>Convert</title>
+    
+</head>
+<body>
+    <div class="nav">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="info.html">Home</a>
+                </li>
+                <li>
+                    <a href="converter.html">Converter</a>
+                </li>
+                
+                <li>
+                    <a href="random_question.html">Quiz</a>
+                </li>
+               
+            
+            </ul>
+            
+        </div>
+        </div>
+        <div  style="text-align: center; margin-top: 80px;">
+                <h1>Currency Converter</h1>
+            
+        </div>
+    <div id="con-body" style="text-align: center;">
+        <div class="x " style="margin-left: 100px; margin-top: 50px; ">
+        
+            <div style="float: left; margin-right: 15px;">
+        <h2>BDT</h2>
+        <input type="text" id="taka"><br>
+        </div>
+        <div style="float: left; margin-right: 15px;">
+            <p> .</p>
+        <h2>TO</h2>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+        <h2>USD</h2>
+        <input type="text" id="dollar"><br>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+            <p> .</p>
+        <h2>TO</h2>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+        <h2>Aus Doller</h2>
+        <input type="text" id="aus_doller"><br>
+        </div>
+
+
+        <div style="float: left; margin-right: 15px;">
+            <p> .</p>
+        <h2>TO</h2>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+        <h2>EURO</h2>
+        <input type="text" id="euro"><br>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+            <p> .</p>
+        <h2>TO</h2>
+        </div>
+        
+        <div style="float: left; margin-right: 15px;">
+        <h2>CAD</h2>
+        <input type="text" id="cad"><br>
+        </div>
+    </div>
+   
+    
+
+
+    <script>
+      let taka= document.querySelector('#taka')
+      let dollar= document.querySelector('#dollar')
+      let euro= document.querySelector('#euro')
+       taka.addEventListener('change',(e)=>{
+           e.preventDefault()
+            dollar.value = (taka.value/84.86).toFixed(2)
+            euro.value = (taka.value/91.91).toFixed(2)
+            cad.value = (taka.value/64.05).toFixed(2)
+            aus_doller.value = (taka.value/56.86).toFixed(2)
+         
+       })
+       dollar.addEventListener('change',(e)=>{
+           e.preventDefault()
+            taka.value = (dollar.value*84.86).toFixed(2)
+            euro.value = (dollar.value/0.96).toFixed(2)
+            cad.value = (dollar.value*1.330).toFixed(2)
+            aus_doller.value = (dollar.value*1.49).toFixed(2)
+       })
+       euro.addEventListener('change',(e)=>{
+           e.preventDefault()
+            taka.value = (euro.value*91.95).toFixed(2)
+            dollar.value = (euro.value*1.18).toFixed(2)
+            cad.value = (euro.value*1.44).toFixed(2)
+            aus_doller.value = (euro.value*1.62).toFixed(2)
+       })
+       cad.addEventListener('change',(e)=>{
+           e.preventDefault()
+            taka.value = (cad.value*64.74).toFixed(2)
+            dollar.value = (cad.value/0.75).toFixed(2)
+            euro.value = (cad.value/0.7).toFixed(2)
+            aus_doller.value = (cad.value*1.13)
+       })
+       aus_doller.addEventListener('change',(e)=>{
+           e.preventDefault()
+            taka.value = (aus_doller.value*56.86).toFixed(2)
+            dollar.value =(aus_doller.value/1.49).toFixed(2)
+            euro.value = (aus_doller.value/1.62).toFixed(2)
+            cad.value = (aus_doller.value/1.13).toFixed(2)
+       })
+       
+    </script>
+</body>
+</html>
